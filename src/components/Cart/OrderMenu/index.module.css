@@ -84,3 +84,8 @@
   font-size: 18px;
   font-weight: 700;
 }
+
+.order-menu__button {
+  width: 100%;
+  min-height: 64px;
+}

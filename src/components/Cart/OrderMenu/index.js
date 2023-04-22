@@ -1,6 +1,7 @@
 import styles from './index.module.css'
 
 import pizza from '../../../static/image/pizza.webp'
+import Button from "../../UI/Button";
 
 const OrderMenu = () => {
   return (
@@ -45,9 +46,7 @@ const OrderMenu = () => {
         </span>
       </div>
 
-      <button className='button'>
-        Checkout
-      </button>
+      <Button className={styles['order-menu__button']}>Checkout</Button>
     </aside>
   )
 }
