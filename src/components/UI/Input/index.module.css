@@ -1,0 +1,20 @@
+.label {
+  display: grid;
+  grid-column-gap: 8px;
+  padding-right: 32px;
+  padding-left: 24px;
+  border-radius: 16px;
+  background: var(--color-white);
+}
+
+.label__input {
+  width: 100%;
+  height: 100%;
+  color: var(--color-grey500);
+  border: 0;
+  outline: 0;
+}
+
+.label__input::placeholder {
+  color: var(--color-grey100);
+}

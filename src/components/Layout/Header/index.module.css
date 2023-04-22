@@ -1,0 +1,12 @@
+.header {
+  display: grid;
+  justify-content: space-between;
+  padding-top: 56px;
+  padding-bottom: 32px;
+}
+
+.header__name {
+  line-height: 54px;
+  font-size: 36px;
+  font-weight: 700;
+}
