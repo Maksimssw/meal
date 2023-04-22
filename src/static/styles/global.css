@@ -1,0 +1,146 @@
+@import "../fonts/style.css";
+
+:root {
+  --color-white:      #FFFFFF;
+
+  --color-grey100:    #A098AE;
+  --color-grey500:    #2E2E2E;
+
+  --color-yellow300:  #F8B602;
+
+  --container-width:  1040px;
+  --container-indent: calc(50% - var(--container-width) / 2);
+
+  --border-rd-md:     4px;
+  --border-rd-lg:     8px;
+}
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  line-height: 1.1;
+  font-family: 'Mulish', 'sans-serif';
+  font-size: 16px;
+  font-weight: 400;
+  border: none;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  transition: color .2s;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-weight: 400;
+  background-color: var(--color-white);
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+}
+
+svg {
+  transition: fill .2s, transform .2s;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+span {
+  display: block;
+}
+
+input {
+  border: none;
+  outline: none;
+}
+
+input::placeholder {
+  letter-spacing: 0.01em;
+  color: var(--color-gray100);
+}
+
+.label {
+  display: grid;
+  grid-row-gap: 16px;
+}
+
+.container {
+  padding-right: var(--container-indent);
+  padding-left: var(--container-indent);
+}
+
+.grid-row {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-start {
+  justify-content: start;
+}
+
+.justify-content-end {
+  justify-content: end;
+}
+
+.rotate-90 {
+  transform: rotateZ(-90deg);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip: rect(0 0 0 0);
+}
+
+.icon-16 {
+  width: 16px;
+  height: 16px;
+}
+
+.icon-24 {
+  width: 24px;
+  height: 24px;
+}
+
+.disabled {
+  display: none !important;
+}
