@@ -1,5 +1,6 @@
 import Header from "./Layout/Header";
 import OrderMenu from "./Cart/OrderMenu";
+import Meals from "./Meals";
 
 const App = () => {
   return (
@@ -7,6 +8,7 @@ const App = () => {
       <Header />
       <main>
         <OrderMenu />
+        <Meals />
       </main>
     </>
   );
