@@ -44,7 +44,6 @@ main {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  min-height: 100vh;
   overflow: hidden;
 }
 
@@ -67,6 +66,11 @@ img {
 
 svg {
   transition: fill .2s, transform .2s;
+}
+
+i {
+  font-style: normal;
+  color: var(--color-yellow300);
 }
 
 button {
@@ -125,10 +129,6 @@ input {
   width: 1px;
   height: 1px;
   clip: rect(0 0 0 0);
-}
-
-.button {
-
 }
 
 .icon-16 {
