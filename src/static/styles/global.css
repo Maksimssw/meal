@@ -127,6 +127,10 @@ input {
   clip: rect(0 0 0 0);
 }
 
+.button {
+
+}
+
 .icon-16 {
   width: 16px;
   height: 16px;
