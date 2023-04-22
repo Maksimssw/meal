@@ -1,5 +1,6 @@
 .header {
   display: grid;
+  grid-template-columns: auto 510px;
   justify-content: space-between;
   padding-top: 56px;
   padding-bottom: 32px;

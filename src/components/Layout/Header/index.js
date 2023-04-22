@@ -6,7 +6,7 @@ import search from '../../../static/icons/search.svg'
 const Header = () => {
   return (
     <header className={`${styles.header} container`}>
-      <h2 className={styles['styles__name']}>Hello, Patricia</h2>
+      <h2 className={styles['header__name']}>Hello, Patricia</h2>
 
       <Input
         img={search}

@@ -2,9 +2,9 @@ import styles from './index.module.css'
 
 const Input = (props) => {
   return (
-    <label className={styles.label}>
+    <label className={`${styles.label} grid-row justify-content-start`}>
       <img
-        src={props.src}
+        src={props.img}
         alt=""
       />
 
@@ -17,4 +17,4 @@ const Input = (props) => {
   )
 }
 
-export default
+export default Input
