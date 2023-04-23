@@ -1,0 +1,38 @@
+.meal {
+  display: grid;
+  grid-row-gap: 24px;
+}
+
+.meal__content {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.meal__name {
+  line-height: 27px;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--color-grey500);
+}
+
+.meal__price {
+  line-height: 36px;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-grey500);
+}
+
+.meal__price i {
+  line-height: 36px;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-yellow300);
+}
+
+.meal__button {
+  width: 48px;
+  height: 48px;
+  font-size: 24px;
+}

@@ -5,7 +5,7 @@ const Card = (props) => {
     <li
       className={`
         ${styles.card}
-        ${props.className}
+        ${props.class}
       `}
     >
       {props.children}

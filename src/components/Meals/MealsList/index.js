@@ -1,8 +1,6 @@
-import styles from './index.module.css'
-import Card from "../../UI/Card";
+import MealItem from "../MealItem";
 
-import burger from '../../../static/image/burgers/burger.webp'
-import Button from "../../UI/Button";
+import styles from './index.module.css'
 
 const MEALS = [
   {
@@ -28,24 +26,11 @@ const MEALS = [
 const MealsList = () => {
   const mealsList = MEALS.map((meal) => {
     return (
-      <Card className={styles.meal} key={meal.id}>
-        <img
-          src={burger}
-          alt=""
-        />
-
-        <div className={styles['meal__content']}>
-          <div>
-            <span className={styles['meal__name']}>{meal.name}</span>
-            <span className={styles['meal__price']}>
-              <i>$</i>
-              {meal.price}
-            </span>
-          </div>
-
-          <Button className={styles['meal__button']}>+</Button>
-        </div>
-      </Card>
+      <MealItem
+        key={meal.id}
+        name={meal.name}
+        price={meal.price}
+      />
     )
   })
 
