@@ -1,5 +1,5 @@
+import MealItemForm from "./MealItemForm";
 import Card from "../../UI/Card";
-import Button from "../../UI/Button";
 
 import burger from "../../../static/image/burgers/burger.webp";
 import styles from "./index.module.css";
@@ -20,7 +20,7 @@ const MealItem = (props) => {
             </span>
         </div>
 
-        <Button className={styles['meal__button']}>+</Button>
+        <MealItemForm />
       </div>
     </Card>
   )

@@ -6,7 +6,7 @@ const Button = (props) => {
       type={props.type}
       className={`
         ${styles.button}
-        ${props.className}
+        ${props.class}
       `}
     >
       {props.children}

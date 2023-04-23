@@ -13,7 +13,7 @@
 .meal__name {
   line-height: 27px;
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 700;
   color: var(--color-grey500);
 }
 
@@ -30,9 +30,24 @@
   font-weight: 700;
   color: var(--color-yellow300);
 }
+.meal__form {
+  grid-column-gap: 6px;
+}
+
+.meal__label {
+  grid-auto-flow: row;
+  grid-row-gap: 4px;
+  max-width: 60px;
+}
+
+.meal__label span {
+  font-size: 14px;
+  font-weight: 700;
+}
 
 .meal__button {
   width: 48px;
   height: 48px;
   font-size: 24px;
 }
+

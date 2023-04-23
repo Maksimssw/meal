@@ -46,7 +46,7 @@ const OrderMenu = () => {
         </span>
       </div>
 
-      <Button className={styles['order-menu__button']}>Checkout</Button>
+      <Button class={styles['order-menu__button']}>Checkout</Button>
     </aside>
   )
 }
