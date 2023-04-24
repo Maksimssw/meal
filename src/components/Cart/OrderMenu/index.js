@@ -16,7 +16,7 @@ const OrderMenu = () => {
     <aside
       className={`
         ${styles['order-menu']}
-        ${context.items.length > 0 && styles['order-menu_active']}
+        ${context.items.length > 0 ? styles['order-menu_active'] : ''}
       `}
     >
       <h2 className={styles['order-menu__headline']}>Order Menu</h2>
