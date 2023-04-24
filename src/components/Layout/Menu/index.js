@@ -13,7 +13,7 @@ const Menu = () => {
           alt="GoMeal"
         />
       </a>
-  
+
       <ul className={styles['menu__list']}>
         <li className={styles['menu__item']}>
           <img

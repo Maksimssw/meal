@@ -7,18 +7,21 @@ const MEALS = [
     сategory: 'burger',
     name: 'Fish Burger',
     price: '5.59',
+    amount: 1,
     id: Math.random().toString()
   },
   {
     сategory: 'burger',
     name: 'Beef Burger',
     price: '5.59',
+    amount: 1,
     id: Math.random().toString()
   },
   {
     сategory: 'burger',
     name: 'Cheese Burger',
     price: '5.59',
+    amount: 1,
     id: Math.random().toString()
   }
 ]
