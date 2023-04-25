@@ -4,22 +4,25 @@ import styles from './index.module.css'
 
 const MEALS = [
   {
-    сategory: 'burger',
+    category: 'burgers',
     name: 'Fish Burger',
     price: '5.59',
-    id: Math.random().toString()
+    id: Math.random().toString(),
+    image: 'burger.webp'
   },
   {
-    сategory: 'burger',
+    category: 'burgers',
     name: 'Beef Burger',
     price: '5.59',
-    id: Math.random().toString()
+    id: Math.random().toString(),
+    image: 'burger2.webp'
   },
   {
-    сategory: 'burger',
+    category: 'burgers',
     name: 'Cheese Burger',
     price: '5.59',
-    id: Math.random().toString()
+    id: Math.random().toString(),
+    image: 'burger3.webp'
   }
 ]
 
@@ -31,6 +34,8 @@ const MealsList = () => {
         id={meal.id}
         name={meal.name}
         price={meal.price}
+        category={meal.category}
+        image={meal.image}
       />
     )
   })

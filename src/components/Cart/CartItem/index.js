@@ -1,14 +1,17 @@
-import styles from "./index.module.css";
-import pizza from "../../../static/image/pizza.webp";
 import Button from "../../UI/Button";
+
+import styles from "./index.module.css";
 
 const CartItem = (props) => {
   const amountTotal = (props.price * props.amount).toFixed(2)
 
+  const image = require(`../../../static/image/${props.category}/${props.image}`)
+
   return (
     <li className={`${styles.cart} grid-row`}>
       <img
-        src={pizza}
+        className={styles['cart__image']}
+        src={image}
         alt=""
       />
 

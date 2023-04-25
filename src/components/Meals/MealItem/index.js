@@ -1,20 +1,23 @@
 import {useContext} from "react";
 
+import CartContext from "../../../store/Cart/cart-context";
 import MealItemForm from "./MealItemForm";
 import Card from "../../UI/Card";
 
-import burger from "../../../static/image/burgers/burger.webp";
 import styles from "./index.module.css";
-import CartContext from "../../../store/Cart/cart-context";
 
 const MealItem = (props) => {
   const context = useContext(CartContext)
 
+  const image = require(`../../../static/image/${props.category}/${props.image}`)
+
   const addToItemHandler = (amount) => {
     context.addItem({
       name: props.name,
-      price: props.price,
+      price: props.price, 
       id: props.id,
+      category: props.category,
+      image: props.image,
       amount: amount
     })
   }
@@ -22,7 +25,7 @@ const MealItem = (props) => {
   return (
     <Card class={styles.meal}>
       <img
-        src={burger}
+        src={image}
         alt=""
       />
 

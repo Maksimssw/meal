@@ -25,6 +25,8 @@ const OrderMenu = () => {
         name={item.name}
         amount={item.amount}
         price={item.price}
+        image={item.image}
+        category={item.category}
         onAddToItem={addToItemHandler.bind(null, item)}
         onRemoveToItem={removeToItemHandler.bind(null, item.id)}
       />
