@@ -19,6 +19,7 @@ const MealItemForm = (props) => {
       return
     }
 
+    amountRef.current.value = 1
     props.onAddToItem(amount)
   }
 

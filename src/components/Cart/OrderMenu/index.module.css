@@ -41,25 +41,6 @@
   border-bottom: 1px solid var(--color-grey100);
 }
 
-.order-menu__content {
-  display: grid;
-  grid-row-gap: 4px;
-}
-
-.order-menu__name {
-  line-height: 27px;
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--color-grey500);
-}
-
-.order-menu__count {
-  line-height: 21px;
-  font-size: 14px;
-  font-weight: 400;
-  color: var(--color-grey100);
-}
-
 .order-menu__price {
   text-align: end;
   line-height: 27px;

@@ -1,14 +1,35 @@
 import {useContext} from "react";
 import CartContext from "../../../store/Cart/cart-context";
 import Button from "../../UI/Button";
+import CartItem from "../CartItem";
 
-import pizza from '../../../static/image/pizza.webp'
 import styles from './index.module.css'
 
 const OrderMenu = () => {
   const context = useContext(CartContext)
 
   const amountTotal = +context.count.toFixed(2) + 1
+
+  const addToItemHandler = (item) => {
+    console.log(item)
+  }
+
+  const removeToItemHandler = (id) => {
+    console.log(id)
+  }
+
+  const cartItems = context.items.map((item) => {
+    return (
+      <CartItem
+        key={item.id}
+        name={item.name}
+        amount={item.amount}
+        price={item.price}
+        onAddToItem={addToItemHandler.bind(null, item)}
+        onRemoveToItem={removeToItemHandler.bind(null, item.id)}
+      />
+    )
+  })
 
   return (
     <aside
@@ -21,23 +42,7 @@ const OrderMenu = () => {
       <span className={styles['order-menu__quantity']}>in total {context.items.length}</span>
 
       <ul className={styles['order-menu__list']}>
-        <li className={`${styles['order-menu__item']} grid-row`}>
-          <img
-            src={pizza}
-            alt=""
-          />
-
-          <div className={styles['order-menu__content']}>
-            <span className={styles['order-menu__name']}>Pepperoni Pizza</span>
-            <span className={styles['order-menu__count']}>x1</span>
-          </div>
-
-          <span className={styles['order-menu__price']}>
-            +
-            <i>$</i>
-            5.59
-          </span>
-        </li>
+        {cartItems}
       </ul>
 
       <div
