@@ -11,11 +11,14 @@ const OrderMenu = () => {
   const amountTotal = +context.count.toFixed(2) + 1
 
   const addToItemHandler = (item) => {
-    console.log(item)
+    context.addItem({
+      ...item,
+      amount: 1
+    })
   }
 
   const removeToItemHandler = (id) => {
-    console.log(id)
+    context.removeItem(id)
   }
 
   const cartItems = context.items.map((item) => {
