@@ -1,0 +1,12 @@
+.icon {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  width: 24px;
+  height: 24px;
+  fill: var(--color-grey150);
+}
+
+.icon_active {
+  fill: var(--color-red200);
+}

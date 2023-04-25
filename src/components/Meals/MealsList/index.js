@@ -36,7 +36,6 @@ const MealsList = (props) => {
 
   const mealsList = MEALS
     .filter((meal) => {
-      console.log(searchName)
       if (searchName === '') return meal
       return searchName === meal.name
     })
