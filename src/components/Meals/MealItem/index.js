@@ -14,7 +14,7 @@ const MealItem = (props) => {
   const addToItemHandler = (amount) => {
     context.addItem({
       name: props.name,
-      price: props.price, 
+      price: props.price,
       id: props.id,
       category: props.category,
       image: props.image,
