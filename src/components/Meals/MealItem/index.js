@@ -1,10 +1,24 @@
+import {useContext} from "react";
+
 import MealItemForm from "./MealItemForm";
 import Card from "../../UI/Card";
 
 import burger from "../../../static/image/burgers/burger.webp";
 import styles from "./index.module.css";
+import CartContext from "../../../store/Cart/cart-context";
 
 const MealItem = (props) => {
+  const context = useContext(CartContext)
+
+  const addToItemHandler = (amount) => {
+    context.addItem({
+      name: props.name,
+      price: props.price,
+      id: props.id,
+      amount: amount
+    })
+  }
+
   return (
     <Card class={styles.meal}>
       <img
@@ -20,7 +34,7 @@ const MealItem = (props) => {
             </span>
         </div>
 
-        <MealItemForm />
+        <MealItemForm onAddToItem={addToItemHandler} />
       </div>
     </Card>
   )

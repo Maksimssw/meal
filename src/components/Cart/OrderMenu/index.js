@@ -8,9 +8,7 @@ import styles from './index.module.css'
 const OrderMenu = () => {
   const context = useContext(CartContext)
 
-  const number = context.items.reduce((current) => {
-    return current + context.count
-  }, 0)
+  const amountTotal = +context.count.toFixed(2) + 1
 
   return (
     <aside
@@ -20,7 +18,7 @@ const OrderMenu = () => {
       `}
     >
       <h2 className={styles['order-menu__headline']}>Order Menu</h2>
-      <span className={styles['order-menu__quantity']}>quantity {number}</span>
+      <span className={styles['order-menu__quantity']}>in total {context.items.length}</span>
 
       <ul className={styles['order-menu__list']}>
         <li className={`${styles['order-menu__item']} grid-row`}>
@@ -56,7 +54,7 @@ const OrderMenu = () => {
         <span className={styles['order-menu__total']}>Total</span>
 
         <span className={styles['order-menu__price']}>
-          <i>$</i>202.00
+          <i>$</i>{amountTotal}
         </span>
       </div>
 
