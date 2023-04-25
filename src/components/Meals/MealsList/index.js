@@ -1,6 +1,7 @@
 import MealItem from "../MealItem";
 
 import styles from './index.module.css'
+import {useEffect, useState} from "react";
 
 const MEALS = [
   {
@@ -26,8 +27,20 @@ const MEALS = [
   }
 ]
 
-const MealsList = () => {
-  const mealsList = MEALS.map((meal) => {
+const MealsList = (props) => {
+  const [searchName, setSearchName] = useState('')
+
+  useEffect(() => {
+    setSearchName(props.name)
+  }, [props.name])
+
+  const mealsList = MEALS
+    .filter((meal) => {
+      console.log(searchName)
+      if (searchName === '') return meal
+      return searchName === meal.name
+    })
+    .map((meal) => {
     return (
       <MealItem
         key={meal.id}

@@ -1,11 +1,11 @@
 import Banner from "./Banner";
 import MealsList from "./MealsList";
 
-const Meals = () => {
+const Meals = (props) => {
   return (
     <>
       <Banner />
-      <MealsList />
+      <MealsList name={props.searchName}/>
     </>
   )
 }

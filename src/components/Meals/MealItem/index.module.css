@@ -52,6 +52,6 @@
 }
 
 .meal__label_error {
-  border-color: red;
+  border-color: var(--color-red300);
 }
 

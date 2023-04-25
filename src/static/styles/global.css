@@ -9,11 +9,13 @@
 
   --color-yellow300:  #F8B602;
 
+  --color-red300:     #EE0C0C;
+
   --container-width:  1040px;
   --container-indent: calc(50% - var(--container-width) / 2);
 
-  --border-rd-md:     4px;
-  --border-rd-lg:     8px;
+  --border-rd-md:     8px;
+  --border-rd-lg:     16px;
 }
 
 *,
