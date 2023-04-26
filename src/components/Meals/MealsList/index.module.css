@@ -1,5 +1,10 @@
 .meals {
+  display: block;
   padding-bottom: 40px;
+}
+
+.meals_hidden {
+  display: none;
 }
 
 .meals__headline {

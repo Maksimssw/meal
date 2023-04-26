@@ -1,4 +1,4 @@
-import {useContext, useRef, useState} from "react";
+import {useContext, useEffect, useRef, useState} from "react";
 
 import Svg from "../../UI/Svg";
 import FavoriteContext from "../../../store/Favorite/favorite-context";
@@ -8,6 +8,10 @@ import styles from "./index.module.css";
 const MealItemFavorite = (props) => {
   const [isActive, setIsActive] = useState(false)
   const favorite = useRef()
+
+  useEffect(() => {
+    if (props.item.isValid) setIsActive(true)
+  }, [])
 
   const contextFavorites = useContext(FavoriteContext)
 

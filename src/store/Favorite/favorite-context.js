@@ -5,6 +5,8 @@ const FavoriteContext = createContext({
   items: [],
   addItem: (item) => {},
   removeItem: (id) => {},
+  openItem: () => {},
+  closeItem: () => {}
 })
 
 export default FavoriteContext

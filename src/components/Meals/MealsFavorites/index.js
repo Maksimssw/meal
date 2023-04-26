@@ -1,11 +1,12 @@
+import styles from "../MealsList/index.module.css";
 import MealItem from "../MealItem";
+import {useContext} from "react";
+import FavoriteContext from "../../../store/Favorite/favorite-context";
 
-import MEALS from "../../../static/data/data";
-import styles from './index.module.css'
+const MealsFavorites = (props) => {
+  const contextFavorite = useContext(FavoriteContext)
 
-
-const MealsList = (props) => {
-  const mealsList = MEALS
+  const mealsList = contextFavorite.items
     .filter((meal) => {
       if (props.name === '') return meal
       return props.name === meal.name
@@ -19,6 +20,7 @@ const MealsList = (props) => {
           price={meal.price}
           category={meal.category}
           image={meal.image}
+          isValid={true}
         />
       )
     })
@@ -27,11 +29,11 @@ const MealsList = (props) => {
     <section
       className={`
         ${styles.meals} 
-        ${props.active ? styles['meals_hidden'] : ''}
+        ${props.active ? '' : styles['meals_hidden']}
         container
       `}
     >
-      <h2 className={styles['meals__headline']}>Menu Burger</h2>
+      <h2 className={styles['meals__headline']}>Favorites</h2>
 
       <ul className={styles['meals__list']}>
         {mealsList}
@@ -40,4 +42,4 @@ const MealsList = (props) => {
   )
 }
 
-export default MealsList
+export default MealsFavorites

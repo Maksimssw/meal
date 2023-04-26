@@ -21,6 +21,7 @@
 }
 
 .menu__item {
+  position: relative;
   display: grid;
   grid-auto-flow: column;
   grid-column-gap: 24px;
@@ -30,6 +31,11 @@
   border-radius: 20px;
   background: var(--color-grey50);
   color: var(--color-grey100);
+}
+
+.menu__item_active {
+  background: var(--color-yellow300);
+  color: var(--color-white);
 }
 
 .menu__link {

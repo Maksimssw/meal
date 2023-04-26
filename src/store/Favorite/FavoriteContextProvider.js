@@ -27,6 +27,20 @@ const favoriteReducer = (state, action) => {
     }
   }
 
+  if (action.type === 'TRUE_VALID') {
+    return {
+      isValid: true,
+      items: state.items
+    }
+  }
+
+  if (action.type === 'FALSE_VALID') {
+    return {
+      isValid: false,
+      items: state.items
+    }
+  }
+
   return stateReducer
 }
 
@@ -49,11 +63,17 @@ const FavoriteContextProvider = (props) => {
     })
   }
 
+  const openFavoriteHandler = () => dispatchFavorite({type: 'TRUE_VALID'})
+
+  const closeFavoriteHandler = () => dispatchFavorite({type: 'FALSE_VALID'})
+
   const favoriteContext = {
     isValid: favorite.isValid,
     items: favorite.items,
     addItem: addItemHandler,
-    removeItem: removeItemHandler
+    removeItem: removeItemHandler,
+    openItem: openFavoriteHandler,
+    closeItem: closeFavoriteHandler
   }
 
   return (
