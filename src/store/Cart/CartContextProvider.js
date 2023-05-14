@@ -65,6 +65,13 @@ const cartReducer = (state, action) => {
     }
   }
 
+  if (action.type === 'ALL_REMOVE') {
+    return {
+      items: [],
+      amountTotal: state.amountTotal
+    }
+  }
+
   return stateReducer
 }
 
@@ -88,10 +95,15 @@ const CartContextProvider = (props) => {
     })
   }
 
+  const allRemoveHanler = () => {
+    dispatchCart({type: 'ALL_REMOVE'})
+  }
+
   const cartContext = {
     items: cart.items,
     count: cart.amountTotal,
     addItem: addItemHandler,
+    allRemove: allRemoveHanler,
     removeItem: removeItemHandler
   }
 

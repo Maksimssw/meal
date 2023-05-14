@@ -1,12 +1,15 @@
-import {useContext} from "react";
+import {useContext, useState} from "react";
 import CartContext from "../../../store/Cart/cart-context";
 import Button from "../../UI/Button";
 import CartItem from "../CartItem";
+import SubmitButton from "./SubmitButton";
 
 import styles from './index.module.css'
+import server from "../../../server/server";
 
 const OrderMenu = () => {
   const context = useContext(CartContext)
+  const [submitIsValid, setSubmitIsValid] = useState(false)
 
   const amountTotal = +context.count.toFixed(2) + 1
 
@@ -16,6 +19,11 @@ const OrderMenu = () => {
       amount: 1
     })
   }
+
+  const {loading, error, sendOrder} = server()
+
+  const submitIsValidHandler = () => setSubmitIsValid(false)
+  const addSubmitHandler = () => setSubmitIsValid(true)
 
   const removeToItemHandler = (id) => {
     context.removeItem(id)
@@ -35,6 +43,11 @@ const OrderMenu = () => {
       />
     )
   })
+
+  const submitOrder = (user) => {
+    sendOrder(user, context.items)
+    context.allRemove()
+  }
 
   return (
     <aside
@@ -68,7 +81,23 @@ const OrderMenu = () => {
         </span>
       </div>
 
-      <Button class={styles['order-menu__button']}>Checkout</Button>
+      {!submitIsValid &&
+        <Button
+          class={styles['order-menu__button']}
+          onClick={addSubmitHandler}
+        >
+          Checkout
+        </Button>
+      }
+
+      {submitIsValid &&
+        <SubmitButton
+          onSubmitOrder={submitOrder}
+          onSubmitIsValid={submitIsValidHandler}
+        />
+      }
+      {loading ? <p>Загрузка</p> : ''}
+      {error ? <p>Ошибка</p> : ''}
     </aside>
   )
 }

@@ -1,11 +1,23 @@
 import MealItem from "../MealItem";
 
-import MEALS from "../../../static/data/data";
 import styles from './index.module.css'
+import {useEffect, useState} from "react";
+import server from "../../../server/server";
 
 
 const MealsList = (props) => {
-  const mealsList = MEALS
+  const {loading, error, requestMeals} = server()
+  const [meals, setMeals] = useState([])
+
+  useEffect(() => {
+    getMeals()
+  }, [])
+
+  const getMeals = () => {
+    requestMeals().then((data) => setMeals(data))
+  }
+
+  const mealsList = meals.length > 0 ? meals
     .filter((meal) => {
       if (props.name === '') return meal
       return props.name === meal.name
@@ -21,7 +33,10 @@ const MealsList = (props) => {
           image={meal.image}
         />
       )
-    })
+    }) : ''
+
+  const loader = loading && !error ?  <p>Загрузка...</p> : ''
+  const mistake = !loading && error ? <p>Ошибка!</p> : ''
 
   return (
     <section
@@ -35,6 +50,8 @@ const MealsList = (props) => {
 
       <ul className={styles['meals__list']}>
         {mealsList}
+        {loader}
+        {mistake}
       </ul>
     </section>
   )

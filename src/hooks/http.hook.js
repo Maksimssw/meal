@@ -4,12 +4,12 @@ const Http = () => {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(false)
 
-  const request = useCallback(async (url) => {
+  const request = useCallback(async (url, post) => {
     setLoading(true)
     setError(false)
 
     try {
-      const res = await fetch(url)
+      const res = await fetch(url, post)
 
       if (!res.ok) {
         throw new Error(`url: ${url}, status: ${res.status}`)
